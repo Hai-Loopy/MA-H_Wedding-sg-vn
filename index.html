@@ -387,9 +387,8 @@
     <script src="./js/main.js"></script>
 
     <script>
-    // Click anywhere on overlay to open the card
     document.querySelector('.overlay').addEventListener('click', function() {
-        document.querySelector('.wrapper').classList.add('hidden');
+        document.querySelector('.wrapper').style.display = 'none';
         document.querySelector('.card').style.display = 'block';
     });
 </script>
