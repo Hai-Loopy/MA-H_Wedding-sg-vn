@@ -46,20 +46,22 @@ h1, h2, h3, p, div, section {
 
 
 /* Overlay that covers the entire viewport */
-/* Overlay */
-.overlay {
-    width: 420px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../images/1.gif');
-    background-size: cover;
+/* Envelope Button - No more floating / puffed up */
+.overlay .overlay-content .toggle-button {
+    width: 320px;
+    height: 240px;
+    background-image: url('../images/envelop.png');
+    background-size: 95%;           /* Try 92% ~ 98% if you want it bigger/smaller */
+    background-repeat: no-repeat;
     background-position: center;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
     position: relative;
+    z-index: 1;
+    display: block;                 /* Changed from inline-flex */
+    margin: 0 auto;
 }
-
-/* Make the WHOLE screen clickable (best for mobile) */
 .overlay::after {
     content: "";
     position: absolute;
@@ -68,62 +70,36 @@ h1, h2, h3, p, div, section {
     cursor: pointer;
 }
 
-/* Center container */
-.overlay .overlay-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 2;
-}
-
-/* Envelope Button - Now as big as possible */
-.overlay .overlay-content .toggle-button {
-    width: 320px;                    /* Bigger button area */
-    height: 650px;                   /* Bigger button area */
-    background-image: url('../images/envelop.png');
-    background-size: 100%;        /* Keeps the whole envelope visible */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-}
-
-/* Text on top of the envelope (no longer pushes it up) */
+/* Text on top of envelope - perfectly centered, no pushing */
 .overlay .overlay-content .toggle-button p {
     position: absolute;
-    top: 50%;
+    top: 48%;                       /* Slightly above center to look natural */
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 34px;
     font-family: "Great Vibes", cursive;
     color: #302b63;
-    text-shadow: 0 3px 6px rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 6px rgba(255,255,255,0.95);
     margin: 0;
     padding: 0;
     z-index: 3;
     pointer-events: none;
+    line-height: 1;
 }
 
 .overlay .overlay-content .toggle-button .buka {
     position: absolute;
-    bottom: 35px;                    /* Adjust if needed */
+    bottom: 28px;                   /* Adjust this number if needed */
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 17px;
     font-family: "Roboto", sans-serif;
     color: #302b63;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 4px rgba(255,255,255,0.9);
     margin: 0;
     z-index: 3;
     pointer-events: none;
 }
-
 
 
 
