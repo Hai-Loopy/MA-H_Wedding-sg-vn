@@ -249,13 +249,43 @@ section {
     border-bottom: 1px solid rgb(195, 195, 195);
 }
 .card section.intro3 {
-    background: url(../images/assalamualaikum-3.png), linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    z-index: 500;
+    position: relative;           /* Important for stacking */
+    min-height: 100vh;            /* Full viewport height */
+    width: 100%;                  /* Full width */
+    background: 
+        url(../images/assalamualaikum-3.png) center center / cover no-repeat,
+        linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
+    background-blend-mode: normal; /* or multiply/overlay if you want blending */
+    
+    /* Optional: make it even more "full page" */
+    display: flex;
+    align-items: center;          /* vertically center content */
+    justify-content: center;      /* horizontally center content */
+    flex-direction: column;
+    
+    z-index: 1;                   /* not too high */
     border-bottom: 1px solid rgb(195, 195, 195);
+}
+
+/* Make sure countdown and other content sit on top of the background */
+.countdown,
+.event-info,
+.counter {
+    position: relative;           /* creates new stacking context */
+    z-index: 2;                   /* higher than the background */
+}
+
+/* Optional: add a subtle dark/bright overlay if the text is hard to read on the image */
+.card section.intro3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);   /* adjust opacity as needed (0.2 - 0.4 is common) */
+    z-index: 1;
+    pointer-events: none;
 }
 
 .card section.intro .content {
