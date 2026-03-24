@@ -7,7 +7,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 body {
     position: relative;
     /*background: linear-gradient(to right, #24243e, #302b63, #0f0c29);*/
@@ -16,7 +20,11 @@ body {
     width: 100%;
     height: 100%;
 }
-
+/* Also reset common elements that cause gaps */
+h1, h2, h3, p, div, section {
+    margin: 0;
+    padding: 0;
+}
 /*============================================================================================
     # Wrapper Overlay
 ============================================================================================*/
@@ -238,6 +246,12 @@ section {
     min-height: 100vh;
     z-index: 500;
     border-bottom: 1px solid rgb(195, 195, 195);
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
 }
 .card section.intro2 {
     background: url(../images/intro3-bg.png), linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
@@ -269,7 +283,7 @@ section {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.3);   /* adjust 0.3 as needed */
+    background: rgba(0, 0, 0, 0);   /* adjust 0.3 as needed */
     z-index: 1;
 }
 
