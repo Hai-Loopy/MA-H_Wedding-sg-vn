@@ -183,23 +183,23 @@ function addAppleCalendar() {
 }
 
 
-
+10.752930179320348, 106.66477997411114
 
 
 /** =====================================================
  *  Location for Google and Waze
   ======================================================= */
 function openGoogleMaps() {
-    const latitude =20.873105700045222;  // Example latitude
-    const longitude = 106.26465657582834;  // Example longitude
+    const latitude =10.752930179320348;  // Example latitude
+    const longitude = 106.66477997411114;  // Example longitude
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&travelmode=driving`;
 
     window.open(googleMapsUrl, "_blank");  // Open in a new tab
 }
 
 function openAppleMaps() {
-    const latitude = 20.873105700045222;   // Example latitude
-    const longitude = 106.26465657582834;  // Example longitude
+    const latitude = 10.752930179320348;   // Example latitude
+    const longitude = 106.66477997411114;  // Example longitude
 
     // Apple Maps directions URL
     const appleMapsUrl = `https://maps.apple.com/?daddr=${latitude},${longitude}&dirflg=d`;
