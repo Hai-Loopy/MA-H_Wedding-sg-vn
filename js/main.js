@@ -93,17 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupCountdown(".campaign-0", weddingEndMillis);
 });
 
-// ★★★ FORCE AUDIO LOOP ★★★
-const audioPlayer = document.getElementById("audio-player");
-if (audioPlayer) {
-    audioPlayer.loop = true;  // Force loop property
-    
-    // Backup: restart on 'ended' event
-    audioPlayer.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    });
-}
+
 
     
     // Your existing countdown code...
